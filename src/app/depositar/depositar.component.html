@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>DEPOSITAR</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<form class="input-form">
+  <mat-form-field class="input-full-width">
+    <mat-label>Depositar</mat-label>
+    <span matPrefix>+ R$ &nbsp;</span>
+    <input matNativeControl type="number" matInput placeholder="Digite o valor a depositar" name="novoValor" ngModel>
+    <button mat-raised-button color="primary" (click)="depositar()"><mat-icon matSuffix>add_circle</mat-icon>Confirmar</button>    
+  </mat-form-field>
+</form>
+<div *ngFor="let valor of transactions">
+<h4>Histórico de depósito: {{valor | currency: 'BRL'}}</h4>
+</div>
